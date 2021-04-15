@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+	<title>Login/Sign-upForm</title>
+</head>
+<body>
+	<!-- <h1 class="heading">Form using HTML CSS</h1> -->
+<div class="container">
+	<!-- class="loginform" -->
+	<form  class="form" id="login"> 
+		<!-- action="admin.html" onsubmit="signIn(event);" -->
+		<h1 class="form-title">Login</h1>
+		<!-- onsubmit="return validatelogin()" -->
+		<!-- <div class="form-message-error"></div> -->
+		<!-- Incorrect username/password combination. -->
+		<div class="form-input-group">
+			<input type="text" id="loginUname" class="form-input" autofocus placeholder="Username" required>
+			<div class="form-input-error-message"></div>
+			<!-- This is an error message -->
+		</div>
+		<div class="form-input-group">
+			<input type="password" id="loginPwd" class="form-input" autofocus placeholder="Password" required>
+			<!-- <div class="form-input-error-message"></div> -->
+		</div>
+		<button class="form-button" onclick="validatelogin()" type="submit" id="btnLogin" >Login</button>
+		<!-- onclick="check()" -->
+		<p class="form-text">
+			<a href="#" class="form-link">Forgot your password</a>
+		</p>
+		<p class="form-text">
+			<a href="#" class="form-link" onclick="showSignupForm()" id="linkCreateAccount">Don't have Account? Create account</a>
+		</p>
+	</form>
+
+	<!-- Registration form  form-hidden-->
+	<!--  class="signupform" -->
+	<form  class="form form-hidden" role="form" id="createAccount" onsubmit="signUp(event);">
+		<!-- action="admin.html" -->
+		<h1 class="form-title">Register</h1>
+		<div class="form-message-error"></div>
+		<!-- Incorrect username/password combination. -->
+		<div class="form-input-group">
+			<input type="text" id="uname" class="form-input" autofocus placeholder="Username" required >
+			<div class="form-input-error-message"></div>
+		</div>
+		<div class="form-input-group">
+			<input type="text" class="form-input" id="email" autofocus placeholder="Email Address" required>
+			<div class="form-input-error-message"></div>
+			<!-- This is an error message -->
+		</div>
+		<div class="form-horizontal" >
+			<div >
+			<input type="text" class="form-input" id="fname" autofocus placeholder="First-Name" required >
+			</div>
+			<div >
+			<input type="text" id="lname" class="form-input" autofocus placeholder="Last-Name" required>
+			</div>
+		</div>
+		<div class="radio-button">
+			<label for="gender" style="padding-right: 5px;" id="gender">Gender</label>
+			<input type="radio" id="male" name="gender" value="male">
+			<label for="male" >Male</label><br>
+			<input type="radio" id="female" name="gender" value="female">
+			<label for="female">Female</label><br>
+			<input type="radio" id="other" name="gender" value="other">
+			<label for="other">Other</label>
+			
+		</div>
+		<div class="drop-down">
+			<label for="roles" style="padding-right: 8px;color: rgba(0, 0, 0, 0.7);" required>Select your Role:</label>
+			<select name="roles" id="roles" class="select" >
+  				<option value="admin">Admin</option>
+  				<option value="operations">Operations</option>
+  				<option value="sales">Sales</option>
+  				<!-- <option value="user">User</option> -->
+			</select>
+		</div>
+		<div class="form-input-group" >
+			<input type="password" id="pwd" class="form-input" autofocus placeholder="Password" required>
+			<div class="form-input-error-message"></div>
+		</div>
+		<div class="form-input-group">
+			<input type="password" id="cpwd" class="form-input" autofocus placeholder="Confirm Password" required>
+			<div class="form-input-error-message"></div>
+		</div>
+		<button class="form-button" onclick="validatesignup()"  id="btnSignup">Sign up</button>
+		<!-- onclick="store()"-->
+		<p class="form-text">
+			<a href="#" class="form-link" onclick="showLoginForm()" id="linkLogin">Already have an account? Sign in</a>
+		</p>
+	</form>
+	<!-- Div for Admin List -->
+<div class="form-hidden Admin" id="adminPage">
+	<h1>This is Admin page</h1>
+		<div id="output">
+            <!-- DISPLAY USERS DATA -->
+       </div>
+</div>
+<!-- Div for Operations List -->
+<div class="form-hidden Operations" id="operationsPage">
+	<h1>This is Operations page</h1>
+<div id="opdata">
+	<!-- DISPLAY USERS DATA -->
+</div>
+</div>
+<!-- Div for Sales List -->
+<div class="form-hidden Sales" id="salesPage">
+	<h1>This is Sales page</h1>
+<div id="salesdata">
+	<!-- DISPLAY USERS DATA -->
+</div>
+</div>
+
+</div>
+<!-- <script src="index.js"></script> -->
+<script src="main.js"></script>
+</body>
+</html>
