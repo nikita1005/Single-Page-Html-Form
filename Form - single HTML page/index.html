@@ -94,24 +94,64 @@
 	</form>
 	<!-- Div for Admin List -->
 <div class="form-hidden Admin" id="adminPage">
-	<h1>This is Admin page</h1>
-		<div id="output">
+	<button class="logoutbtn" onclick="abacktologin()">logout</button>
+<h1 class="pageHeading" >This is Admin page</h1>
+	<div >
+		<table class="table" border="2px" cellspacing="0" cellpadding="10" id="admintable">
+			<h3>Admin Table</h3>
+			<tr>
+				<td >UserName</td>
+				<td >Email</td>
+				<td >First Name</td>
+				<td >Last Name</td>
+				<td >Roles</td>
+				<td >Password</td>
+			</tr>
+		</table>
             <!-- DISPLAY USERS DATA -->
        </div>
 </div>
+
+
 <!-- Div for Operations List -->
 <div class="form-hidden Operations" id="operationsPage">
-	<h1>This is Operations page</h1>
-<div id="opdata">
-	<!-- DISPLAY USERS DATA -->
+	<button class="logoutbtn" onclick="opbacktologin()">logout</button>
+	<h1 class="pageHeading">This is Operations page</h1>
+	<div >
+		<table  class="table" border="2px" cellspacing="0" cellpadding="10"  id="optable">
+			<h3>Operations Table</h3>
+			<tr>
+				<td>UserName</td>
+				<td>Email</td>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>Roles</td>
+				<td>Password</td>
+			</tr>
+		</table>
+            <!-- DISPLAY USERS DATA -->
+       </div>
 </div>
-</div>
+
+
 <!-- Div for Sales List -->
 <div class="form-hidden Sales" id="salesPage">
-	<h1>This is Sales page</h1>
-<div id="salesdata">
-	<!-- DISPLAY USERS DATA -->
-</div>
+	<button class="logoutbtn" onclick="sbacktologin()">logout</button>
+	<h1 class="pageHeading">This is Sales page</h1>
+<div >
+		<table class="table" border="2px" cellspacing="0" cellpadding="10"id="salestable">
+			<h3>Sales Table</h3>
+			<tr>
+				<td>UserName</td>
+				<td>Email</td>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>Roles</td>
+				<td>Password</td>
+			</tr>
+		</table>
+            <!-- DISPLAY USERS DATA -->
+       </div>
 </div>
 
 </div>

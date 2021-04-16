@@ -156,22 +156,73 @@ padding-bottom: 16px;
 .Admin{
     /*display: none;*/
     width: 1000px;
-    max-width: 1000px;
-     height: 550px
-    
+    /*max-width: 1000px;*/
+     height: 550px;
+  /*max-height: 100%;*/
+ resize: both;
+    overflow: auto;
+    max-height: fit-content;
+    max-width: fit-content;
 
 }
 .Operations{
-    /*display: none;*/
+  /*display: none;*/
     width: 1000px;
-    max-width: 1000px;
-     height: 550px
+    /*max-width: 1000px;*/
+     height: 550px;
+  /*max-height: 100%;*/
+ resize: both;
+    overflow: auto;
+    max-height: fit-content;
+    max-width: fit-content;
     
 }
 .Sales{
     /*display: none;*/
-     width: 1000px;
-    max-width: 1000px;
-     height: 550px
+    width: 1000px;
+    /*max-width: 1000px;*/
+     height: 550px;
+  /*max-height: 100%;*/
+ resize: both;
+    overflow: auto;
+    max-height: fit-content;
+    max-width: fit-content;
     
+}
+.pageHeading{
+    float:center;
+    color: #007f67;"
+    /*font-size: 50%;*/
+    /*height: 100px;*/
+    font-weight: bold;
+    /*margin-right: 500px;*/
+    display: inline;
+}
+.logoutbtn{
+    /*text-align: center;*/
+    float:right;
+    width: 90px;
+    max-width: 90px;
+    height: 30px;
+    /*max-width: 30px;*/
+    /*padding: 1rem 2rem;*/
+    font-weight: bold;
+    font-size: 1rem;
+    color:#ffffff;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background: #009579;
+    /*align-items: flex-end;*/
+    /*justify-content: flex-end;*/
+}
+.logoutbtn:hover{
+    background:  #007f67;
+}
+
+.table{
+    /*border: 1px solid;*/
+    border-color:  #007f67;
+    /*padding:2px;*/
 }

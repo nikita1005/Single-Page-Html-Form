@@ -1,21 +1,5 @@
-// let {uname,fname, lname, email, pwd} = JSON.parse(localStorage.getItem('formData'));//destructuring
 // this for nevugation between pages
-// document.addEventListener("DOMContentLoaded", () =>{
-//     const loginForm = document.querySelector('#login');
-//     const createAccountForm = document.querySelector('#createAccount');
 
-// document.querySelector('#linkCreateAccount').addEventListener("click", e =>{
-//     e.preventDefault(); //to prevent default behaviour of link
-//     loginForm.classList.add("form-hidden");
-//     createAccountForm.classList.remove('form-hidden');
-//     });
-
-// document.querySelector('#linkLogin').addEventListener("click", e =>{
-//     e.preventDefault();
-//     loginForm.classList.remove("form-hidden");
-//     createAccountForm.classList.add('form-hidden');
-//     });
-// });
 var signpage = document.getElementById("createAccount");
 var loginpage = document.getElementById("login");
 var admindiv = document.getElementById("adminPage");
@@ -156,18 +140,22 @@ console.log(localStorage.getItem('formData'));
                     loginpage.classList.toggle('form-hidden');
                      admindiv.classList.toggle('form-hidden');
                      dispAdminData();
+
                     //preventDefault();
              }else
              if(storedRoles=="operations"){
                  loginpage.classList.toggle('form-hidden');
                      operationsdiv.classList.toggle('form-hidden');
                      dispOperationsData();
+                    dispAdminData();
                  //preventDefault();
              }else
              if(storedRoles=="sales"){
                  loginpage.classList.toggle('form-hidden');
                  salesdiv.classList.toggle('form-hidden');
                  dispSalesData();
+                 dispAdminData();
+                dispOperationsData();
                  //preventDefault();
              } 
 
@@ -177,102 +165,136 @@ console.log(localStorage.getItem('formData'));
 
 //admin list of data
         function dispAdminData(){
-             console.log(localStorage.getItem('formData'));
+             //console.log(localStorage.getItem('formData'));
+             // for(let i=0; i< localStorage.length; i++){
             let {uname,email,fname, lname, roles, pwd} = JSON.parse(localStorage.getItem('formData'));//destructuring
-            var output = document.getElementById('output');
-            output.innerHTML = `
-            <table>
-                <tbody>
-                	<tr>
-                        <td>Username</td>
-                        <td>${uname}</td>
-                    </tr>
-                	<tr>
-                        <td>Email</td>
-                        <td>${email}</td>
-                    </tr>
-                    <tr>
-                        <td>First Name</td>
-                        <td>${fname}</td>
-                    </tr>
-                    <tr>
-                        <td>Last Name</td>
-                        <td>${lname}</td>
-                    </tr>
-                    <tr>
-                        <td>Roles</td>
-                        <td>${roles}</td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td>${pwd}</td>
-                    </tr>
-                </tbody>
-            </table>`;
+            // var output = document.getElementById('output');
+            // output.innerHTML += `
+            // <table>
+            //     <tbody>
+            //     	<tr>
+            //             <td>Username</td>
+            //             <td>${uname}</td>
+            //         </tr>
+            //     	<tr>
+            //             <td>Email</td>
+            //             <td>${email}</td>
+            //         </tr>
+            //         <tr>
+            //             <td>First Name</td>
+            //             <td>${fname}</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Last Name</td>
+            //             <td>${lname}</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Roles</td>
+            //             <td>${roles}</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Password</td>
+            //             <td>${pwd}</td>
+            //         </tr>
+            //     </tbody>
+            // </table>`;
+            var atable = document.getElementById("admintable");
+            var row = atable.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+            var cell4 = row.insertCell();
+            var cell5 = row.insertCell();
+            var cell6 = row.insertCell();
+            cell1.innerHTML= `${uname}`;
+            cell2.innerHTML= `${email}`;
+            cell3.innerHTML=`${fname}`;
+            cell4.innerHTML=`${lname}`;
+            cell5.innerHTML=`${roles}`;
+            cell6.innerHTML=`${pwd}`;
+
         }
+    // }
         dispAdminData();
 
 
 // operation list of data
 
         function dispOperationsData(){
-             console.log(localStorage.getItem('formData'));
-            let {uname,email,fname, lname, roles} = JSON.parse(localStorage.getItem('formData'));//destructuring
-            var opdata = document.getElementById('opdata');
-            opdata.innerHTML = `
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Username</td>
-                        <td>${uname}</td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>${email}</td>
-                    </tr>
-                    <tr>
-                        <td>First Name</td>
-                        <td>${fname}</td>
-                    </tr>
-                    <tr>
-                        <td>Last Name</td>
-                        <td>${lname}</td>
-                    </tr>
-                    <tr>
-                        <td>Roles</td>
-                        <td>${roles}</td>
-                    </tr>
-                </tbody>
-            </table>`;
+             //console.log(localStorage.getItem('formData'));
+            let {uname,email,fname, lname, roles, pwd} = JSON.parse(localStorage.getItem('formData'));//destructuring
+            var optable = document.getElementById("optable");
+            var row = optable.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+            var cell4 = row.insertCell();
+            var cell5 = row.insertCell();
+            var cell6 = row.insertCell();
+            cell1.innerHTML= `${uname}`;
+            cell2.innerHTML= `${email}`;
+            cell3.innerHTML=`${fname}`;
+            cell4.innerHTML=`${lname}`;
+            cell5.innerHTML=`${roles}`;
+            cell6.innerHTML=`${pwd}`;
         }
         dispOperationsData();
 
 //sales list of data
 
 function dispSalesData(){
-             console.log(localStorage.getItem('formData'));
+            // console.log(localStorage.getItem('formData'));
             let {uname,email,fname, lname, roles, pwd} = JSON.parse(localStorage.getItem('formData'));//destructuring
-            var salesdata = document.getElementById('salesdata');
-            salesdata.innerHTML = `
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Email</td>
-                        <td>${email}</td>
-                    </tr>
-                    <tr>
-                        <td>First Name</td>
-                        <td>${fname}</td>
-                    </tr>
-                    <tr>
-                        <td>Last Name</td>
-                        <td>${lname}</td>
-                    </tr>
-                    <tr>
-                        <td>Roles</td>
-                        <td>${roles}</td>
-                    </tr>
-                </tbody>
-            </table>`;
+            // var salesdata = document.getElementById('salesdata');
+            // salesdata.innerHTML = `
+            // <table>
+            //     <tbody>
+            //         <tr>
+            //             <td>Email</td>
+            //             <td>${email}</td>
+            //         </tr>
+            //         <tr>
+            //             <td>First Name</td>
+            //             <td>${fname}</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Last Name</td>
+            //             <td>${lname}</td>
+            //         </tr>
+            //         <tr>
+            //             <td>Roles</td>
+            //             <td>${roles}</td>
+            //         </tr>
+            //     </tbody>
+            // </table>`;
+             var stable = document.getElementById("salestable");
+            var row = stable.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+            var cell4 = row.insertCell();
+            var cell5 = row.insertCell();
+            var cell6 = row.insertCell();
+            cell1.innerHTML= `${uname}`;
+            cell2.innerHTML= `${email}`;
+            cell3.innerHTML=`${fname}`;
+            cell4.innerHTML=`${lname}`;
+            cell5.innerHTML=`${roles}`;
+            cell6.innerHTML=`${pwd}`;
         }
         dispSalesData();
+
+
+
+        function abacktologin(){
+            admindiv.classList.toggle('form-hidden');
+            loginpage.classList.toggle('form-hidden');
+        }
+        function opbacktologin(){
+                     operationsdiv.classList.toggle('form-hidden');
+                     loginpage.classList.toggle('form-hidden');
+        }
+        function sbacktologin(){
+               salesdiv.classList.toggle('form-hidden');
+                  loginpage.classList.toggle('form-hidden');
+        }
